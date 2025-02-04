@@ -50,40 +50,43 @@
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             font-weight: 700;
+            opacity: 0;
+            animation: slideIn 1s forwards ease-out;
         }
 
         h1 {
             font-size: 3em;
             color: #f4b400; /* لون النص بارز */
+            animation-delay: 0.2s;
         }
 
         h2 {
             font-size: 2em;
             color: #34a853;
+            animation-delay: 0.4s;
         }
 
         p {
             font-size: 1.2em;
             color: #e8eaed;
+            animation-delay: 0.6s;
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(-50px);
-            animation: fadeIn 1s forwards ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
+        @keyframes slideIn {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
                 transform: translateY(0);
+                opacity: 1;
             }
         }
 
-        .video-section iframe {
+        .video-section video {
             width: 100%;
-            max-width: 700px;
-            height: 400px;
+            max-width: 1080px;  /* تغيير الحجم إلى 1080px */
+            height: 720px;  /* الحفاظ على ارتفاع 720px */
             margin-top: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -156,9 +159,12 @@
         <p class="fade-in">ترجمة كاملة لأدوات هذا التطبيق من العربية إلى الإنجليزية.</p>
 
         <div class="video-section">
-            <iframe src="video.mp4" frameborder="0" allowfullscreen></iframe>
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+            </video>
         </div>
-        
+
         <a href="1index.html" class="arrow-link">
             صفحة التطبيق
             <span class="arrow">➡️</span>
